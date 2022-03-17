@@ -40,9 +40,6 @@ class EngineTemplate():
             elif cmds[0] == "env":
                 exec("import etc.env.env_manager as env")
                 exec("env.show()")
-            elif cmds[0] == "pkg":
-                exec("import dev.packager.core as package")
-                exec("package.run({})".format(self.exec_formatter(cmds)))
             else:
                 exec("import app."+cmds[0]+".main as command")
                 exec("command.run({})".format(self.exec_formatter(cmds)))
